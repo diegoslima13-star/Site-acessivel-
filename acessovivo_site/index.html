@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AcessoVivo: portal de inclusão com recursos, serviços e informações sobre direitos das pessoas com deficiência.">
+  <title>AcessoVivo — Portal de Inclusão</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="access-toolbar" aria-label="Ferramentas de acessibilidade">
+    <span class="toolbar-label">ACESSIBILIDADE:</span>
+    <button type="button" class="tool-btn" data-font="1" aria-label="Tamanho de texto normal">A</button>
+    <button type="button" class="tool-btn" data-font="1.12" aria-label="Aumentar texto">A+</button>
+    <button type="button" class="tool-btn" data-font="1.25" aria-label="Aumentar texto mais">A++</button>
+    <span class="toolbar-separator" aria-hidden="true"></span>
+    <button type="button" class="tool-btn icon-tool" id="contrastBtn" aria-label="Alternar alto contraste" title="Alto contraste">☼</button>
+    <button type="button" class="tool-btn icon-tool" id="darkBtn" aria-label="Alternar modo escuro" title="Modo escuro">☾</button>
+    <button type="button" class="tool-btn icon-tool" id="focusBtn" aria-label="Destacar elementos" title="Destacar elementos">◎</button>
+    <span class="toolbar-separator" aria-hidden="true"></span>
+    <button type="button" class="tool-btn text-tool" id="dyslexiaBtn">T Dislexia</button>
+    <button type="button" class="tool-btn text-tool" id="readBtn">🔊 Ler</button>
+    <button type="button" class="tool-btn reset-tool" id="resetBtn" aria-label="Restaurar acessibilidade" title="Restaurar acessibilidade">↶</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="AcessoVivo - página inicial">
+        <span class="brand-icon" aria-hidden="true">♿</span>
+        <span><strong>AcessoVivo</strong><small>Portal de Inclusão</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu">☰</button>
+      <nav id="mainNav" class="main-nav" aria-label="Navegação principal">
+        <a href="#recursos">Recursos</a>
+        <a href="#direitos">Direitos</a>
+        <a href="#contatos">Contatos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">♡ PORTAL INCLUSIVO</span>
+          <h1>Seus direitos,<br><span>sem barreiras.</span></h1>
+          <p>Recursos, serviços e informações organizados para pessoas com deficiência visual, auditiva, motora, cognitiva e múltipla. Totalmente acessível.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#recursos">Ver recursos <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="#direitos">Meus direitos</a>
+          </div>
+        </div>
+        <div class="stats-grid" aria-label="Informações do portal">
+          <article class="stat-card"><span aria-hidden="true">👥</span><strong>18,6M</strong><small>Pessoas com deficiência no Brasil</small></article>
+          <article class="stat-card"><span aria-hidden="true">✅</span><strong>100%</strong><small>Recursos gratuitos neste portal</small></article>
+          <article class="stat-card"><span aria-hidden="true">⚖️</span><strong>LBI</strong><small>Lei Brasileira de Inclusão (13.146)</small></article>
+          <article class="stat-card"><span aria-hidden="true">📞</span><strong>24h</strong><small>Disque 100 sempre disponível</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources-section" id="recursos">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="section-kicker">ENCONTRE AJUDA</span><h2>Recursos e Serviços</h2><p class="muted">Consulte serviços e ferramentas de apoio à inclusão.</p></div>
+          <label class="search-box"><span class="sr-only">Buscar recursos</span><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar recurso..." autocomplete="off"></label>
+        </div>
+
+        <h3 class="filter-title">Filtrar por tipo de deficiência</h3>
+        <div class="filters" role="group" aria-label="Filtrar por tipo de deficiência">
+          <button class="filter-btn active" data-filter="todos" aria-pressed="true">Todas as deficiências</button>
+          <button class="filter-btn" data-filter="visual" aria-pressed="false">👁️ Deficiência Visual</button>
+          <button class="filter-btn" data-filter="auditiva" aria-pressed="false">👂 Deficiência Auditiva</button>
+          <button class="filter-btn" data-filter="motora" aria-pressed="false">♿ Deficiência Motora</button>
+          <button class="filter-btn" data-filter="cognitiva" aria-pressed="false">🧠 Deficiência Cognitiva</button>
+          <button class="filter-btn" data-filter="multipla" aria-pressed="false">🌟 Múltiplas Deficiências</button>
+        </div>
+
+        <div class="results-heading"><div><h2>Todos os recursos</h2><p id="resultCount" class="muted" aria-live="polite">10 recursos encontrados</p></div></div>
+        <div class="resource-grid" id="resourceGrid">
+          <article class="resource-card" data-category="visual" data-search="INSS benefício prestação continuada BPC 135 renda">
+            <span class="tag tag-visual">👁 Deficiência Visual</span><h3>INSS — Benefício de Prestação Continuada</h3><p>Benefício de 1 salário mínimo para pessoas com deficiência de baixa renda. Sem limite de idade.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:135">☎ 135</a><a class="small-btn" href="https://www.gov.br/inss/pt-br" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="auditiva" data-search="VLibras tradutor libras língua brasileira sinais digital">
+            <span class="tag tag-auditiva">👂 Deficiência Auditiva</span><h3>VLibras — Tradutor de Libras</h3><p>Ferramenta gratuita que traduz conteúdo digital em Língua Brasileira de Sinais.</p>
+            <div class="card-actions"><a class="small-btn" href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="motora" data-search="CAT Centro Apoio Tecnológico cadeira rodas órteses próteses SUS">
+            <span class="tag tag-motora">♿ Deficiência Motora</span><h3>CAT — Centro de Apoio Tecnológico</h3><p>Procure a rede pública de saúde para orientações sobre cadeiras de rodas, órteses e próteses via SUS.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:08006444000">☎ 0800 644 4000</a></div>
+          </article>
+          <article class="resource-card" data-category="cognitiva" data-search="APAE Brasil rede apoio saúde educação assistência social intelectual">
+            <span class="tag tag-cognitiva">🧠 Deficiência Cognitiva</span><h3>APAE Brasil — Rede de Apoio</h3><p>Rede nacional com serviços de saúde, educação e assistência social para pessoas com deficiência intelectual.</p>
+            <div class="card-actions"><a class="small-btn" href="https://apaebrasil.org.br/" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="motora" data-search="Passe Livre transporte gratuito interestadual baixa renda">
+            <span class="tag tag-motora">♿ Deficiência Motora</span><h3>Passe Livre — Transporte Gratuito</h3><p>Isenção de tarifa em transporte interestadual para pessoas com deficiência de baixa renda, conforme os critérios do programa.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:08006100300">☎ 0800 610 0300</a><a class="small-btn" href="https://www.gov.br/antt/pt-br" target="_blank" rel="noopener noreferrer">↗ Informações</a></div>
+          </article>
+          <article class="resource-card" data-category="auditiva" data-search="Rádio INES educação surdos conteúdos culturais Instituto Nacional Educação Surdos">
+            <span class="tag tag-auditiva">👂 Deficiência Auditiva</span><h3>Rádio INES — Educação para Surdos</h3><p>Conteúdos educacionais e culturais desenvolvidos pelo Instituto Nacional de Educação de Surdos.</p>
+            <div class="card-actions"><a class="small-btn" href="https://www.gov.br/ines/pt-br" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="visual" data-search="DOSVOX leitor tela gratuito cegos Windows UFRJ">
+            <span class="tag tag-visual">👁 Deficiência Visual</span><h3>DOSVOX — Leitor de Tela Gratuito</h3><p>Sistema computacional para pessoas cegas desenvolvido pelo NCE/UFRJ. Funciona em Windows sem custo.</p>
+            <div class="card-actions"><a class="small-btn" href="http://intervox.nce.ufrj.br/dosvox/" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="cognitiva" data-search="Inclusão Escolar MEC Atendimento Educacional Especializado AEE escolas públicas">
+            <span class="tag tag-cognitiva">🧠 Deficiência Cognitiva</span><h3>Inclusão Escolar — MEC</h3><p>Informações sobre Atendimento Educacional Especializado (AEE) e inclusão nas escolas públicas.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:0800616161">☎ 0800 616161</a><a class="small-btn" href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener noreferrer">↗ Acessar</a></div>
+          </article>
+          <article class="resource-card" data-category="multipla" data-search="FUNAD tecnologia assistiva dispositivos equipamentos múltiplas deficiências">
+            <span class="tag tag-multipla">🌟 Múltiplas Deficiências</span><h3>FUNAD — Tecnologia Assistiva</h3><p>Fundação de apoio que oferece orientações e serviços de habilitação e reabilitação; consulte a unidade da sua região.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:08007221100">☎ 0800 722 1100</a></div>
+          </article>
+          <article class="resource-card" data-category="multipla" data-search="CORDE Coordenadoria Nacional direitos políticas inclusão deficiência Disque 100">
+            <span class="tag tag-multipla">🌟 Múltiplas Deficiências</span><h3>Direitos e denúncias — Disque 100</h3><p>Canal nacional para denunciar violações de direitos humanos, inclusive contra pessoas com deficiência.</p>
+            <div class="card-actions"><a class="phone-pill" href="tel:100">☎ 100</a><a class="small-btn" href="https://www.gov.br/mdh/pt-br" target="_blank" rel="noopener noreferrer">↗ Informações</a></div>
+          </article>
+        </div>
+        <p id="emptyState" class="empty-state" hidden>Nenhum recurso encontrado. Tente outra palavra ou filtro.</p>
+      </div>
+    </section>
+
+    <section class="section rights-section" id="direitos">
+      <div class="container rights-layout">
+        <div><span class="section-kicker">INFORMAÇÃO É DIREITO</span><h2>Conheça seus direitos</h2><p>A Lei Brasileira de Inclusão (Lei nº 13.146/2015) protege a participação plena das pessoas com deficiência na sociedade, com igualdade de oportunidades e acessibilidade.</p><a class="btn btn-primary" href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" rel="noopener noreferrer">Ler a Lei Brasileira de Inclusão ↗</a></div>
+        <div class="rights-list">
+          <article><span>01</span><div><h3>Acessibilidade</h3><p>Direito de acessar espaços, serviços, informação e comunicação.</p></div></article>
+          <article><span>02</span><div><h3>Educação inclusiva</h3><p>Direito à educação sem discriminação e com os apoios necessários.</p></div></article>
+          <article><span>03</span><div><h3>Saúde e reabilitação</h3><p>Acesso aos serviços de saúde e aos recursos necessários para autonomia.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contatos">
+      <div class="container contact-panel">
+        <div><span class="section-kicker">PRECISA DE AJUDA?</span><h2>Estamos aqui para orientar.</h2><p>Em caso de violação de direitos humanos, entre em contato com o Disque 100. Para emergências, procure os serviços oficiais da sua região.</p></div>
+        <a class="contact-number" href="tel:100"><span>☎</span><span><small>Disque Direitos Humanos</small><strong>100</strong><small>Ligação gratuita</small></span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#inicio"><span class="brand-icon">♿</span><span><strong>AcessoVivo</strong><small>Portal de Inclusão</small></span></a><p>Informação acessível para uma sociedade sem barreiras.</p><span>© <span id="year"></span> AcessoVivo</span></div><p class="disclaimer">Portal demonstrativo. Confirme telefones, critérios e disponibilidade diretamente nos canais oficiais.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
